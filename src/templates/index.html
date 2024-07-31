@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Spotify Artist Top Tracks</title>
+</head>
+<body>
+    <h1>Spotify Artist Top Tracks</h1>
+    <form action="/results" method="post">
+        <label for="artist_uri">Enter Artist URI:</label>
+        <input type="text" id="artist_uri" name="artist_uri" required>
+        <button type="submit">Get Top Tracks</button>
+    </form>
+</body>
+</html>

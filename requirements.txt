@@ -13,3 +13,10 @@ seaborn>=0.12.2
 sqlalchemy>=1.4.37
 sympy>=1.10.1
 xgboost
+spotipy==2.19.0
+Flask==2.0.3
+
+
+
+
+
