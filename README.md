@@ -1,3 +1,20 @@
+# My Flask Spotify Application
+
+This web application allows users to analyze Spotify artist data.
+
+## Deployment
+
+The application is deployed and accessible at the following link:
+
+[My Flask Spotify Application](https://flask-jba7.onrender.com)
+
+## Features
+
+- Analyze top tracks of a Spotify artist
+- Visualize popularity vs valence and duration vs popularity
+
+
+
 # Data Science Project Boilerplate
 
 This boilerplate is designed to kickstart data science projects by providing a basic setup for database connections, data processing, and machine learning model development. It includes a structured folder organization for your datasets and a set of pre-defined Python packages necessary for most data science tasks.
