@@ -16,3 +16,8 @@ dependencies:
   - sympy
   - xgboost
   - requests
+  - mkl-service>=2.4.0
+  - mkl-random>=1.2.4
+  - pip
+  - pip:
+    - render
