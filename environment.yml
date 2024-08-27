@@ -3,7 +3,7 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.11
   - numpy
   - pandas
   - matplotlib
@@ -16,8 +16,48 @@ dependencies:
   - sympy
   - xgboost
   - requests
-  - mkl-service>=2.4.0
-  - mkl-random>=1.2.4
+  - mkl-service
+  - async-timeout
+  - blinker
+  - bottleneck
+  - brotli
+  - certifi
+  - charset-normalizer
+  - click
+  - colorama
+  - contourpy
+  - cycler
+  - fonttools
+  - gmpy2
+  - greenlet
+  - idna
+  - importlib-metadata
+  - importlib_resources
+  - itsdangerous
+  - jinja2
+  - kiwisolver
+  - markupsafe
+  - mpmath
+  - numexpr
+  - packaging
+  - pillow
   - pip
+  - ply
+  - pyparsing
+  - pyqt
+  - pysocks
+  - python-dateutil
+  - pytz
+  - setuptools
+  - sip
+  - six
+  - tomli
+  - tornado
+  - typing_extensions
+  - unicodedata2
+  - urllib3
+  - werkzeug
+  - wheel
+  - zipp
   - pip:
     - render
