@@ -10,18 +10,21 @@ import joblib
 app = Flask(__name__)
 
 # Load and prepare data
-data = pd.read_csv("https://raw.githubusercontent.com/4GeeksAcademy/linear-regression-project-tutorial/main/medical_insurance_cost.csv")
-X = data[['age', 'bmi', 'children', 'smoker', 'region']]
-y = data['charges']
-X = pd.get_dummies(X, drop_first=True)
+@app.before_first_request
+def load_model():
+    global model
+    data = pd.read_csv("https://raw.githubusercontent.com/4GeeksAcademy/linear-regression-project-tutorial/main/medical_insurance_cost.csv")
+    X = data[['age', 'bmi', 'children', 'smoker', 'region']]
+    y = data['charges']
+    X = pd.get_dummies(X, drop_first=True)
 
-# Train the model
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-model = LinearRegression()
-model.fit(X_train, y_train)
+    # Train the model
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    model = LinearRegression()
+    model.fit(X_train, y_train)
 
-# Save the model
-joblib.dump(model, 'insurance_cost_model.joblib')
+    # Save the model
+    joblib.dump(model, 'insurance_cost_model.joblib')
 
 @app.route('/')
 def home():
@@ -34,11 +37,11 @@ def predict():
     df = pd.get_dummies(df, drop_first=True)
     
     # Ensure all columns from training are present
-    for col in X.columns:
+    for col in model.feature_names_in_:
         if col not in df.columns:
             df[col] = 0
     
-    prediction = model.predict(df[X.columns])
+    prediction = model.predict(df[model.feature_names_in_])
     return jsonify({'prediction': prediction[0]})
 
 if __name__ == '__main__':
