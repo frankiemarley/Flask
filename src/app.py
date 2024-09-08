@@ -8,7 +8,7 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # Global variable to hold our model
 model = None
